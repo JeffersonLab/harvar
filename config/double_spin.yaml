@@ -1,0 +1,142 @@
+# ================================================================
+# Rho Electroproduction Generator Configuration
+# Physics Case: Beam-Target Double Spin Asymmetry Measurement
+# ================================================================
+
+run:
+  n_events: 50000
+  random_seed: 12345
+  output_file: "output/double_spin_events.lund"
+  log_level: "INFO"           # INFO, DEBUG, WARNING, ERROR
+  print_every: 5000           # Progress messages every N events
+
+kinematics:
+  beam_energy: 10.6           # GeV - CLAS12 configuration
+
+  # Q² range: moderate to high (valence quark region)
+  q2_min: 1.5                 # GeV²
+  q2_max: 3.0                 # GeV²
+
+  # Bjorken x: valence quark region
+  xb_min: 0.2
+  xb_max: 0.4
+
+  # Mandelstam t: small |t| for diffractive regime
+  t_min: -1.0                 # GeV² (small |t|)
+  t_max: -0.1                 # GeV² (upper limit)
+
+  # Scanning parameters for weight calculation
+  n_scan: 50000               # Events to scan for max weight
+  weight_safety_factor: 1.2   # Multiply wMax by this (>1 for safety)
+
+model:
+  cross_section_model: "SCHC"  # SCHC, FILE, GPD, REGGE
+
+  # SCHC model parameters
+  t_slope: 5.0                # GeV^-2, exponential t-dependence
+
+  # 3-fold reduced cross sections (at reference point)
+  dsigma_t_dt: 10.0           # nb/GeV² - transverse
+  dsigma_l_dt: 1.0            # nb/GeV² - longitudinal
+
+  # Optional: rho mass (not yet implemented, for future)
+  # rho_mass_distribution: "fixed"  # fixed, breit_wigner
+  # rho_mass_mean: 0.77526    # GeV
+  # rho_mass_width: 0.1491    # GeV
+
+polarization:
+  # Beam polarization (longitudinal)
+  beam:
+    enabled: true
+    mode: "randomize"         # randomize, fixed
+    value: 0.85               # Used if mode=fixed, or avg if randomize
+    # When randomize: randomly assigns ±1 each event
+    # Physics: enables beam-spin asymmetries (W_LU, W_LL, W_LT terms)
+
+  # Target longitudinal polarization
+  target_longitudinal:
+    enabled: true
+    mode: "fixed"
+    value: 0.70               # Typical polarized NH3 target
+    # Physics: enables target-spin asymmetries (W_UL, W_LL terms)
+
+  # Target transverse polarization
+  target_transverse:
+    enabled: false
+    magnitude: 0.0
+    azimuth_mode: "fixed"     # fixed, random, uniform
+    azimuth_value: 0.0        # radians (if mode=fixed)
+    # Physics: enables transverse asymmetries (W_UT, W_LT terms)
+
+  # Which W kernel terms to include in cross section
+  include_terms:
+    - "UU"    # Unpolarized
+    - "LU"    # Beam-spin asymmetry
+    - "UL"    # Target-spin asymmetry
+    - "LL"    # Double-spin asymmetry (CRITICAL for this study!)
+    # Not including: UT, LT (transverse target disabled)
+
+amplitudes:
+  source: "SCHC"              # SCHC, FILE
+
+  # File loading (if source=FILE)
+  file:
+    enabled: false
+    path: "data/amplitudes_q2_2.0.csv"
+    format: "CSV"             # CSV, JSON, HDF5
+    interpolation: "linear"   # nearest, linear, spline
+
+  # Validation
+  validation:
+    check_normalization: true  # Verify PDF equation (14)
+    normalization_tolerance: 0.01
+    warn_on_violation: true
+
+decay:
+  channel: "pi_pi"            # pi_pi (only mode for now)
+
+  # Angular sampling
+  sampling_mode: "isotropic"  # isotropic, pdf_weighted
+  # isotropic: Generate isotropic decay, weight by W(ϕ,φ,θ)
+  # pdf_weighted: Sample angles from W distribution (not yet implemented)
+
+weighting:
+  mode: "weighted"            # weighted, unweighted
+  # weighted: Events have varying weights (current implementation)
+  # unweighted: Rejection sampling (not yet implemented)
+
+  # Max weight finding
+  find_max_weight: true
+  max_weight_override: null   # Set to value to skip auto-finding
+
+validation:
+  # Runtime checks
+  check_4momentum: true       # Verify energy-momentum conservation
+  check_angle_ranges: true    # Verify ϕ,φ ∈ [0,2π), θ ∈ [0,π]
+  check_positive_weight: true # Warn on negative weights
+
+  # Debug output
+  print_first_n_events: 0     # Print full event details for first N
+  print_weight_distribution: true  # Summary statistics at end
+
+  # Tolerances
+  momentum_tolerance: 1e-6    # GeV
+  angle_tolerance: 1e-9       # radians
+
+# ================================================================
+# Physics Notes:
+#
+# This configuration generates a sample suitable for measuring
+# the double-spin asymmetry A_LL:
+#
+#   A_LL = (σ↑↑ - σ↑↓) / (σ↑↑ + σ↑↓)
+#
+# where ↑↑ means beam and target polarized parallel, and ↑↓ means
+# antiparallel.
+#
+# The W_LL term (from helicity amplitude matrix 'l') contributes
+# to this asymmetry. Measuring A_LL vs ϕ, Q², xB provides insight
+# into GPD E (related to quark orbital angular momentum).
+#
+# Expected modulation: A_LL ~ sin(ϕ) from Im(l) amplitudes
+# ================================================================

@@ -1,0 +1,658 @@
+\documentclass[12pt]{article}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+%-------------------------------------------------------------
+
+%\allowdisplaybreaks[2]
+
+% small space in math
+\newcommand{\ms}{\mskip 1.5mu}
+\newcommand{\bs}{\mskip -1.5mu}
+
+\newcommand{\half}{ {\textstyle\frac{1}{2}} }
+
+\newcommand{\im}{\operatorname{Im}}
+\newcommand{\re}{\operatorname{Re}}
+
+\newcommand{\gev}{\operatorname{GeV}}
+\newcommand{\mev}{\operatorname{MeV}}
+
+% three-vectors
+\newcommand{\tvec}[1]{\boldsymbol{#1}}
+
+\newcommand{\ru}[4]{u^{\ms #1 #2}_{#3 #4}}
+\newcommand{\rl}[4]{l^{\ms #1 #2}_{#3 #4}}
+\newcommand{\rs}[4]{s^{\ms #1 #2}_{#3 #4}}
+\newcommand{\rn}[4]{n^{\ms #1 #2}_{#3 #4}}
+
+% unnatural parity exchange
+\newcommand{\ruu}[4]{\tilde{u}^{\ms #1 #2}_{#3 #4}}
+\newcommand{\rnu}[4]{\tilde{n}^{\ms #1 #2}_{#3 #4}}
+
+% misalignment angle
+\newcommand{\cost}{\cos\theta_\gamma}
+\newcommand{\sint}{\sin\theta_\gamma}
+
+% for alignment in sub- and subscripts
+\newcommand{\0}{{\mskip 2.5mu} 0 {\mskip 2.5mu}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Vector meson production from a polarized nucleon}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+Let us consider the electroproduction process
+\begin{equation}
+  \label{production}
+e(l) + p(p) \to e(l') + p(p') + \rho(v) 
+\end{equation}
+followed by the decay
+\begin{equation}
+  \label{decay}
+\rho(v) \to \pi^+(k_1) + \pi^-(k_2) ,
+\end{equation}
+where four-momenta $l, l', p, p' v$ are given in parentheses.  
+
+
+Conventional variables for deep
+inelastic processes, $q=l-l'$, $Q^2= -q^2$, $x_B= Q^2 /(2 p\cdot q)$,
+$y=(p\cdot q) /(p\cdot l)$, $t=(p-p')^2=(q-v)^2$.  
+
+\begin{equation}
+  \label{eps-def}
+\epsilon
+  = \frac{1 - y - \frac{1}{4}\ms y^2 \gamma^2}{
+          1 - y + \frac{1}{2}\ms y^2 + \frac{1}{4}\ms y^2 \gamma^2}
+\end{equation}
+
+
+The cross section can be written as
+\begin{align}
+  \label{X-sect}
+& \frac{d\sigma}{d\psi\, d\phi\, d\varphi\, d(\cos\vartheta)\,
+                 dx_B\, dQ^2\, dt}
+ = \frac{1}{(2\pi)^2}\, \frac{d\sigma}{dx_B\, dQ^2\, dt}\,
+\nonumber \\[0.3em]
+&\qquad\qquad \times
+   \Bigl( W_{UU} + P_\ell\ms W_{LU} 
+        + S_L W_{UL} + P_\ell\ms S_L W_{LL}
+        + S_T W_{UT} + P_\ell\ms S_T W_{LT} \Bigr)
+\end{align}
+with longitudinal lepton beam polarization is $P_\ell$, longitudinal target polarization $S_\ell$, and transverse target polarization $S_T$.
+
+\begin{equation}
+\frac{d\sigma}{dx_B\, dQ^2\, dt} =
+\frac{\alpha_{\rm em}}{2\pi}\, \frac{y^2}{1-\epsilon}\,
+   \frac{1-x_B}{x_B}\, \frac{1}{Q^2}\,
+   \biggl( \frac{d\sigma_T}{dt} 
+         + \epsilon\, \frac{d\sigma_L}{dt} \biggr) \,,
+\end{equation}
+
+ The normalization of the unpolarized term $W_{UU}$ is
+\begin{equation}
+  \label{W-norm}
+\int \frac{d\phi}{2\pi}
+\int d\varphi\; d(\cos\vartheta)\; W_{UU}(\phi,\varphi,\vartheta)
+  = 1 \,.
+\end{equation}
+%
+
+\begin{align}
+  \label{W-dec}
+& W_{UU}(\phi,\varphi,\vartheta) 
+\nonumber \\
+& = \frac{3}{4\pi} \biggl[\,
+     \cos^2\bs\vartheta\; W_{UU}^{LL}(\phi)
+   + \sqrt{2} \cos\vartheta\, \sin\vartheta\;
+                          W_{UU}^{LT}(\phi,\varphi)
+   + \sin^2\bs\vartheta\; W_{UU}^{TT}(\phi,\varphi)
+   \,\biggr]
+\end{align}
+
+
+\begin{align}
+  \label{W-dec1}
+& W_{LU}(\phi,\varphi,\vartheta) 
+\nonumber \\
+& = \frac{3}{4\pi} \biggl[\,
+     \cos^2\bs\vartheta\; W_{LU}^{LL}(\phi)
+   + \sqrt{2} \cos\vartheta\, \sin\vartheta\;
+                          W_{LU}^{LT}(\phi,\varphi)
+   + \sin^2\bs\vartheta\; W_{LU}^{TT}(\phi,\varphi)
+   \,\biggr]
+\end{align}
+
+
+\begin{align}
+  \label{W-dec2}
+& W_{UL}(\phi,\varphi,\vartheta) 
+\nonumber \\
+& = \frac{3}{4\pi} \biggl[\,
+     \cos^2\bs\vartheta\; W_{UL}^{LL}(\phi)
+   + \sqrt{2} \cos\vartheta\, \sin\vartheta\;
+                          W_{UL}^{LT}(\phi,\varphi)
+   + \sin^2\bs\vartheta\; W_{UL}^{TT}(\phi,\varphi)
+   \,\biggr]
+\end{align}
+
+
+\begin{align}
+  \label{W-dec3}
+& W_{LL}(\phi,\varphi,\vartheta) 
+\nonumber \\
+& = \frac{3}{4\pi} \biggl[\,
+     \cos^2\bs\vartheta\; W_{LL}^{LL}(\phi)
+   + \sqrt{2} \cos\vartheta\, \sin\vartheta\;
+                          W_{LL}^{LT}(\phi,\varphi)
+   + \sin^2\bs\vartheta\; W_{LL}^{TT}(\phi,\varphi)
+   \,\biggr]
+\end{align}
+
+
+polarized target we have in addition a dependence on $\phi_S$,
+\begin{align}
+& W_{UT}(\phi_S,\phi,\varphi,\vartheta) 
+\nonumber \\
+& = \frac{3}{4\pi} \biggl[\,
+     \cos^2\bs\vartheta\; W_{UT}^{LL}(\phi_S,\phi)
+   + \sqrt{2} \cos\vartheta\, \sin\vartheta\;
+                          W_{UT}^{LT}(\phi_S,\phi,\varphi)
+   + \sin^2\bs\vartheta\; W_{UT}^{TT}(\phi_S,\phi,\varphi)
+   \,\biggr]
+\end{align}
+
+\begin{align}
+& W_{LT}(\phi_S,\phi,\varphi,\vartheta) 
+\nonumber \\
+& = \frac{3}{4\pi} \biggl[\,
+     \cos^2\bs\vartheta\; W_{LT}^{LL}(\phi_S,\phi)
+   + \sqrt{2} \cos\vartheta\, \sin\vartheta\;
+                          W_{LT}^{LT}(\phi_S,\phi,\varphi)
+   + \sin^2\bs\vartheta\; W_{LT}^{TT}(\phi_S,\phi,\varphi)
+   \,\biggr]
+\end{align}
+
+with $\phi_S$ transverse polarization azimuthal angle. 
+%
+%%%%%%%%%%%%%%%%%%% WUU %%% begin master formulae
+\begin{align}
+  \label{WUU}
+W_{UU}^{LL}(\phi) &=
+  \bigl( \ru{\0}{\0}{+}{+} + \epsilon \ru{\0}{\0}{\0}{\0} \bigr)
+  - 2\cos\phi\, \sqrt{\epsilon (1+\epsilon)}\ms \re\ru{\0}{\0}{\0}{+}
+  - \cos(2\phi)\, \epsilon \ru{\0}{\0}{-}{+} \,,
+  \phantom{\frac{1}{2}}
+\nonumber \\
+%
+W_{UU}^{LT}(\phi,\varphi) &=
+  \cos(\phi + \varphi)\, \sqrt{\epsilon (1+\epsilon)}\ms
+  \re\bigl( \ru{\0}{+}{\0}{+} - \ru{-}{\0}{\0}{+} \bigr)
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \quad{}
+  - \cos\varphi\,
+  \re\bigl( \ru{\0}{+}{+}{+} - \ru{-}{\0}{+}{+}
+          + 2\epsilon \ru{\0}{+}{\0}{\0} \bigr)
+  + \cos(2\phi + \varphi)\, \epsilon \re\ru{\0}{+}{-}{+}
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \quad{}
+  - \cos(\phi - \varphi)\, \sqrt{\epsilon (1+\epsilon)}\ms
+    \re\bigl( \ru{\0}{-}{\0}{+} - \ru{+}{\0}{\0}{+} \bigr)
+  + \cos(2\phi - \varphi)\, \epsilon \re\ru{+}{\0}{-}{+} \,,
+  \phantom{\frac{1}{2}}
+\nonumber \\
+%
+W_{UU}^{TT}(\phi,\varphi) &=
+  \tfrac{1}{2}\ms \bigl( \ru{+}{+}{+}{+} + \ru{-}{-}{+}{+}
+                      + 2\epsilon \ru{+}{+}{\0}{\0} \bigr)
+  + \tfrac{1}{2} \cos(2\phi + 2\varphi)\, \epsilon \ru{-}{+}{-}{+}
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \quad{}
+  - \cos\phi\, \sqrt{\epsilon (1+\epsilon)}\ms
+    \re\bigl( \ru{+}{+}{\0}{+} + \ru{-}{-}{\0}{+} \bigr)
+  + \cos(\phi + 2\varphi)\, \sqrt{\epsilon (1+\epsilon)}\ms
+    \re\ru{-}{+}{\0}{+}
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \quad{}
+  - \cos(2\varphi)\,
+    \re\bigl( \ru{-}{+}{+}{+} + \epsilon \ru{-}{+}{\0}{\0} \bigr)
+  - \cos(2\phi)\, \epsilon \re\ru{+}{+}{-}{+}
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \quad{}
+  + \cos(\phi - 2\varphi)\, \sqrt{\epsilon (1+\epsilon)}\ms
+    \re\ru{+}{-}{\0}{+}
+  + \tfrac{1}{2} \cos(2\phi - 2\varphi)\, \epsilon \ru{+}{-}{-}{+} \,.
+  \phantom{\frac{1}{2}}
+\end{align}
+
+The terms independent of $\phi$ and $\varphi$ in $W_{UU}^{LL}$ and
+$W_{UU}^{TT}$ are related by
+\begin{equation}
+  \label{norm-rel}
+\ru{+}{+}{+}{+} + \ru{-}{-}{+}{+} + 2\epsilon \ru{+}{+}{\0}{\0}
+= 1 - 
+  \bigl( \ru{\0}{\0}{+}{+} + \epsilon \ru{\0}{\0}{\0}{\0} \bigr) \,,
+\end{equation}
+
+
+%
+%%%%%%%%%%%%%%%%%%% WLU %%%
+\begin{align}
+  \label{WLU}
+W_{LU}^{LL}(\phi) &=
+  - 2 \sin\phi\, \sqrt{\epsilon (1-\epsilon)}\ms \im\ru{\0}{\0}{\0}{+}
+  \,,
+  \phantom{\frac{1}{2}}
+\nonumber \\
+%
+W_{LU}^{LT}(\phi,\varphi) &=
+  \sin(\phi + \varphi)\, \sqrt{\epsilon (1-\epsilon)}\ms
+    \im\bigl( \ru{\0}{+}{\0}{+} - \ru{-}{\0}{\0}{+} \bigr)
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \quad{}
+  - \sin\varphi\, \sqrt{1 - \epsilon^2}\,
+    \im\bigl( \ru{\0}{+}{+}{+} - \ru{-}{\0}{+}{+} \bigr)
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \quad{}
+  - \sin(\phi - \varphi)\, \sqrt{\epsilon (1-\epsilon)}\ms
+    \im\bigl( \ru{\0}{-}{\0}{+} - \ru{+}{\0}{\0}{+} \bigr) \,,
+  \phantom{\frac{1}{2}}
+\nonumber \\
+%
+W_{LU}^{TT}(\phi,\varphi) &=
+  - \sin\phi\, \sqrt{\epsilon (1-\epsilon)}\ms
+    \im\bigl( \ru{+}{+}{\0}{+} + \ru{-}{-}{\0}{+} \bigr)
+  + \sin(\phi + 2\varphi)\, \sqrt{\epsilon (1-\epsilon)}\ms
+    \im\ru{-}{+}{\0}{+}
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \quad{}
+  - \sin(2\varphi)\, \sqrt{1 - \epsilon^2}\, \im\ru{-}{+}{+}{+}
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \quad{}
+  + \sin(\phi - 2\varphi)\, \sqrt{\epsilon (1-\epsilon)}\ms
+    \im\ru{+}{-}{\0}{+} \,.
+  \phantom{\frac{1}{2}}
+\end{align}
+
+
+%%%%%%%%%%%%%%%%%%% WUL %%%
+\begin{align}
+  \label{WUL}
+W_{UL}^{LL}(\phi) &=
+  - 2 \sin\phi\, \sqrt{\epsilon (1+\epsilon)}\ms \im\rl{\0}{\0}{\0}{+}
+  - \sin(2\phi)\, \epsilon \im\rl{\0}{\0}{-}{+} \,,
+  \phantom{\frac{1}{2}}
+\nonumber \\
+%
+W_{UL}^{LT}(\phi,\varphi) &=
+  \sin(\phi + \varphi)\, \sqrt{\epsilon (1+\epsilon)}\ms
+  \im\bigl( \rl{\0}{+}{\0}{+} - \rl{-}{\0}{\0}{+} \bigr)
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \quad{}
+  - \sin\varphi\,
+  \im\bigl( \rl{\0}{+}{+}{+} - \rl{-}{\0}{+}{+}
+          + 2\epsilon\ms \rl{\0}{+}{\0}{\0} \bigr)
+  + \sin(2\phi + \varphi)\, \epsilon \im\rl{\0}{+}{-}{+}
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \quad{}
+  - \sin(\phi - \varphi)\, \sqrt{\epsilon (1+\epsilon)}\ms
+    \im\bigl( \rl{\0}{-}{\0}{+} - \rl{+}{\0}{\0}{+} \bigr)
+  + \sin(2\phi - \varphi)\, \epsilon \im\rl{+}{\0}{-}{+} \,,
+  \phantom{\frac{1}{2}}
+\nonumber \\
+%
+W_{UL}^{TT}(\phi,\varphi) &=
+  \tfrac{1}{2} \sin(2\phi + 2\varphi)\, \epsilon \im\rl{-}{+}{-}{+}
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \quad{}
+  - \sin\phi\, \sqrt{\epsilon (1+\epsilon)}\ms
+    \im\bigl( \rl{+}{+}{\0}{+} + \rl{-}{-}{\0}{+} \bigr)
+  + \sin(\phi + 2\varphi)\, \sqrt{\epsilon (1+\epsilon)}\ms
+    \im\rl{-}{+}{\0}{+}
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \quad{}
+  - \sin(2\varphi)\,
+    \im\bigl( \rl{-}{+}{+}{+} + \epsilon\ms \rl{-}{+}{\0}{\0} \bigr)
+  - \sin(2\phi)\, \epsilon \im\rl{+}{+}{-}{+}
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \quad{}
+  + \sin(\phi - 2\varphi)\, \sqrt{\epsilon (1+\epsilon)}\ms
+    \im\rl{+}{-}{\0}{+}
+  + \tfrac{1}{2} \sin(2\phi - 2\varphi)\, \epsilon \im\rl{+}{-}{-}{+}
+  \phantom{\frac{1}{2}}
+\end{align}
+
+%
+%%%%%%%%%%%%%%%%%%% WLL %%%
+\begin{align}
+  \label{WLL}
+W_{LL}^{LL}(\phi) &=
+  - 2\cos\phi\, \sqrt{\epsilon (1-\epsilon)}\ms \re\rl{\0}{\0}{\0}{+}
+  + \sqrt{1 - \epsilon^2}\; \rl{\0}{\0}{+}{+} \,,
+  \phantom{\frac{1}{2}}
+\nonumber \\
+%
+W_{LL}^{LT}(\phi,\varphi) &=
+  \cos(\phi + \varphi)\, \sqrt{\epsilon (1-\epsilon)}\ms
+  \re\bigl( \rl{\0}{+}{\0}{+} - \rl{-}{\0}{\0}{+} \bigr)
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \quad{}
+  - \cos\varphi\, \sqrt{1 - \epsilon^2}\,
+    \re\bigl( \rl{\0}{+}{+}{+} - \rl{-}{\0}{+}{+} \bigr)
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \quad{}
+  - \cos(\phi - \varphi)\, \sqrt{\epsilon (1-\epsilon)}\ms
+    \re\bigl( \rl{\0}{-}{\0}{+} - \rl{+}{\0}{\0}{+} \bigr) \,,
+  \phantom{\frac{1}{2}}
+\nonumber \\
+%
+W_{LL}^{TT}(\phi,\varphi) &=
+  \sqrt{1 - \epsilon^2}\; \tfrac{1}{2}\ms
+  \bigl( \rl{+}{+}{+}{+} + \rl{-}{-}{+}{+} \bigr)
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \quad{}
+  - \cos\phi\, \sqrt{\epsilon (1-\epsilon)}\ms
+    \re\bigl( \rl{+}{+}{\0}{+} + \rl{-}{-}{\0}{+} \bigr)
+  + \cos(\phi + 2\varphi)\, \sqrt{\epsilon (1-\epsilon)}\ms
+    \re\rl{-}{+}{\0}{+}
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \quad{}
+  - \cos(2\varphi)\, \sqrt{1 - \epsilon^2}\, \re\rl{-}{+}{+}{+}
+\nonumber \\
+& \quad{}
+  + \cos(\phi - 2\varphi)\, \sqrt{\epsilon (1-\epsilon)}\ms
+    \re\rl{+}{-}{\0}{+}
+  \phantom{\frac{1}{2}}
+\end{align}
+
+%
+%%%%%%%%%%% WUT %%%
+\begin{align}
+  \label{WUT}
+W_{UT}^{LL}(\phi_S,\phi) &=
+\sin(\phi-\phi_S)\, \Bigl[\,
+  \im\bigl( \rn{\0}{\0}{+}{+} + \epsilon \rn{\0}{\0}{\0}{\0} \bigr)
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \qquad{}
+  - 2\cos\phi\, \sqrt{\epsilon (1+\epsilon)}\ms \im\rn{\0}{\0}{\0}{+}
+  - \cos(2\phi)\, \epsilon \im\rn{\0}{\0}{-}{+}
+\,\Bigr]
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& {}
++ \cos(\phi-\phi_S)\, \Bigl[\,
+  - 2\sin\phi\, \sqrt{\epsilon (1+\epsilon)}\ms \im\rs{\0}{\0}{\0}{+}
+  - \sin(2\phi)\, \epsilon \im\rs{\0}{\0}{-}{+}
+\,\Bigr] \,,
+  \phantom{\frac{1}{2}}
+\nonumber \\
+%
+W_{UT}^{LT}(\phi_S,\phi,\varphi) &=
+\sin(\phi-\phi_S)\, \Bigl[\,
+  \cos(\phi + \varphi)\, \sqrt{\epsilon (1+\epsilon)}\ms
+  \im\bigl( \rn{\0}{+}{\0}{+} - \rn{-}{\0}{\0}{+} \bigr)
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \qquad{}
+  - \cos\varphi\,
+  \im\bigl( \rn{\0}{+}{+}{+} - \rn{-}{\0}{+}{+}
+          + 2\epsilon \rn{\0}{+}{\0}{\0} \bigr)
+  + \cos(2\phi + \varphi)\, \epsilon \im\rn{\0}{+}{-}{+}
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \qquad{}
+  - \cos(\phi - \varphi)\, \sqrt{\epsilon (1+\epsilon)}\ms
+    \im\bigl( \rn{\0}{-}{\0}{+} - \rn{+}{\0}{\0}{+} \bigr)
+  + \cos(2\phi - \varphi)\, \epsilon \im\rn{+}{\0}{-}{+}
+\,\Bigr]
+  \phantom{\frac{1}{2}}
+\displaybreak[2]
+\nonumber \\
+& {}
++ \cos(\phi-\phi_S)\, \Bigl[\,
+  \sin(\phi + \varphi)\, \sqrt{\epsilon (1+\epsilon)}\ms
+  \im\bigl( \rs{\0}{+}{\0}{+} - \rs{-}{\0}{\0}{+} \bigr)
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \qquad{}
+  - \sin\varphi\,
+  \im\bigl( \rs{\0}{+}{+}{+} - \rs{-}{\0}{+}{+}
+          + 2\epsilon \rs{\0}{+}{\0}{\0} \bigr)
+  + \sin(2\phi + \varphi)\, \epsilon \im\rs{\0}{+}{-}{+}
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \qquad{}
+  - \sin(\phi - \varphi)\, \sqrt{\epsilon (1+\epsilon)}\ms
+    \im\bigl( \rs{\0}{-}{\0}{+} - \rs{+}{\0}{\0}{+} \bigr)
+  + \sin(2\phi - \varphi)\, \epsilon \im\rs{+}{\0}{-}{+}
+\,\Bigr] \,,
+  \phantom{\frac{1}{2}}
+\nonumber \\
+%
+W_{UT}^{TT}(\phi_S,\phi,\varphi) &=
+\sin(\phi-\phi_S)\, \Bigl[\,
+  \tfrac{1}{2} \im\bigl( \rn{+}{+}{+}{+} + \rn{-}{-}{+}{+}
+                      + 2\epsilon \rn{+}{+}{\0}{\0} \bigr)
+  + \tfrac{1}{2} \cos(2\phi + 2\varphi)\, \epsilon \im\rn{-}{+}{-}{+}
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \qquad{}
+  - \cos\phi\, \sqrt{\epsilon (1+\epsilon)}\ms
+    \im\bigl( \rn{+}{+}{\0}{+} + \rn{-}{-}{\0}{+} \bigr)
+  + \cos(\phi + 2\varphi)\, \sqrt{\epsilon (1+\epsilon)}\ms
+    \im\rn{-}{+}{\0}{+}
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \qquad{}
+  - \cos(2\varphi)\,
+    \im\bigl( \rn{-}{+}{+}{+} + \epsilon \rn{-}{+}{\0}{\0} \bigr)
+  - \cos(2\phi)\, \epsilon \im\rn{+}{+}{-}{+}
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \qquad{}
+  + \cos(\phi - 2\varphi)\, \sqrt{\epsilon (1+\epsilon)}\ms
+    \im\rn{+}{-}{\0}{+}
+  + \tfrac{1}{2} \cos(2\phi - 2\varphi)\, \epsilon \im\rn{+}{-}{-}{+}
+\,\Bigr]
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& {}
++ \cos(\phi-\phi_S)\, \Bigl[\,
+  \tfrac{1}{2} \sin(2\phi + 2\varphi)\, \epsilon \im\rs{-}{+}{-}{+}
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \qquad{}
+  - \sin\phi\,  \sqrt{\epsilon (1+\epsilon)}\ms
+    \im\bigl( \rs{+}{+}{\0}{+} + \rs{-}{-}{\0}{+} \bigr)
+  + \sin(\phi + 2\varphi)\, \sqrt{\epsilon (1+\epsilon)}\ms
+    \im\rs{-}{+}{\0}{+}
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \qquad{}
+  - \sin(2\varphi)\,
+    \im\bigl( \rs{-}{+}{+}{+} + \epsilon \rs{-}{+}{\0}{\0} \bigr)
+  - \sin(2\phi)\, \epsilon \im\rs{+}{+}{-}{+}
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \qquad{}
+  + \sin(\phi - 2\varphi)\, \sqrt{\epsilon (1+\epsilon)}\ms
+    \im\rs{+}{-}{\0}{+}
+  + \tfrac{1}{2} \sin(2\phi - 2\varphi)\, \epsilon \im\rs{+}{-}{-}{+}
+\,\Bigr]
+  \phantom{\frac{1}{2}}
+\end{align}
+%
+%%%%%%%%%%%%%%%%%%% WLT %%%
+\begin{align}
+  \label{WLT}
+W_{LT}^{LL}(\phi_S,\phi) &=
+\sin(\phi-\phi_S)\, \Bigl[\,\,
+  2\sin\phi\, \sqrt{\epsilon (1-\epsilon)}\ms \re\rn{\0}{\0}{\0}{+}
+\,\Bigr]
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& {}
++ \cos(\phi-\phi_S)\, \Bigl[\,
+  - 2\cos\phi\, \sqrt{\epsilon (1-\epsilon)}\ms \re\rs{\0}{\0}{\0}{+}
+  + \sqrt{1 - \epsilon^2}\, \rs{\0}{\0}{+}{+}
+\,\Bigr] \,,
+  \phantom{\frac{1}{2}}
+\nonumber \\
+%
+W_{LT}^{LT}(\phi_S,\phi,\varphi) &=
+\sin(\phi-\phi_S)\, \Bigl[\,
+  - \sin(\phi + \varphi)\, \sqrt{\epsilon (1-\epsilon)}\ms
+    \re\bigl( \rn{\0}{+}{\0}{+} - \rn{-}{\0}{\0}{+} \bigr)
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \qquad{}
+  + \sin\varphi\, \sqrt{1 - \epsilon^2}\,
+    \re\bigl( \rn{\0}{+}{+}{+} - \rn{-}{\0}{+}{+} \bigr)
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \qquad{}
+  + \sin(\phi - \varphi)\, \sqrt{\epsilon (1-\epsilon)}\ms
+    \re\bigl( \rn{\0}{-}{\0}{+} - \rn{+}{\0}{\0}{+} \bigr)
+\,\Bigr]
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& {}
++ \cos(\phi-\phi_S)\, \Bigl[\,
+  \cos(\phi + \varphi)\, \sqrt{\epsilon (1-\epsilon)}\ms
+  \re\bigl( \rs{\0}{+}{\0}{+} - \rs{-}{\0}{\0}{+} \bigr)
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \qquad{}
+  - \cos\varphi\, \sqrt{1 - \epsilon^2}\,
+    \re\bigl( \rs{\0}{+}{+}{+} - \rs{-}{\0}{+}{+} \bigr)
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \qquad{}
+  - \cos(\phi - \varphi)\, \sqrt{\epsilon (1-\epsilon)}\ms
+    \re\bigl( \rs{\0}{-}{\0}{+} - \rs{+}{\0}{\0}{+} \bigr)
+\,\Bigr] \,,
+  \phantom{\frac{1}{2}}
+\nonumber \\
+%
+W_{LT}^{TT}(\phi_S,\phi,\varphi) &=
+\sin(\phi-\phi_S)\,
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \quad\times \Bigl[\,
+  \sin\phi\, \sqrt{\epsilon (1-\epsilon)}\ms
+    \re\bigl( \rn{+}{+}{\0}{+} + \rn{-}{-}{\0}{+} \bigr)
+  - \sin(\phi + 2\varphi)\, \sqrt{\epsilon (1-\epsilon)}\ms
+    \re\rn{-}{+}{\0}{+}
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \qquad{}
+  + \sin(2\varphi)\, \sqrt{1 - \epsilon^2}\, \re\rn{-}{+}{+}{+}
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \qquad{}
+  - \sin(\phi - 2\varphi)\, \sqrt{\epsilon (1-\epsilon)}\ms
+    \re\rn{+}{-}{\0}{+}
+\,\Bigr]
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& {}
++ \cos(\phi-\phi_S)\, \Bigl[\,
+  \sqrt{1 - \epsilon^2}\; \tfrac{1}{2}\ms
+  \bigl( \rs{+}{+}{+}{+} + \rs{-}{-}{+}{+} \bigr)
+  \phantom{\frac{1}{2}}
+\displaybreak[2]
+\nonumber \\
+& \qquad{}
+  - \cos\phi\, \sqrt{\epsilon (1-\epsilon)}\ms
+    \re\bigl( \rs{+}{+}{\0}{+} + \rs{-}{-}{\0}{+} \bigr)
+  + \cos(\phi + 2\varphi)\, \sqrt{\epsilon (1-\epsilon)}\ms
+    \re\rs{-}{+}{\0}{+}
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \qquad{}
+  - \cos(2\varphi)\, \sqrt{1 - \epsilon^2}\, \re\rs{-}{+}{+}{+}
+  \phantom{\frac{1}{2}}
+\nonumber \\
+& \qquad{}
+  + \cos(\phi - 2\varphi)\, \sqrt{\epsilon (1-\epsilon)}\ms
+    \re\rs{+}{-}{\0}{+}
+\,\Bigr]
+  \phantom{\frac{1}{2}}
+\end{align}
+
+
+
+
+Angles  $\phi$, $\varphi$ and $\theta$  defined as following:
+
+The azimuthal angle $\phi$ between $\rho^0$-meson production plane and lepton scattering plane in the hadronic CM system is given by:
+\begin{eqnarray}
+\cos \phi = \frac{ (\vec{q} \times \vec{v}) \cdot (\vec{l} \times \vec{l}')}
+{ | \vec{q} \times \vec{v} | \cdot |\vec{l} \times \vec{l}'| } ,
+\label{phicap1-def}
+\end{eqnarray}
+
+\begin{eqnarray}
+\sin \phi =
+ \frac{ [ (\vec{q} \times \vec{v} )\times (\vec{l} \times \vec{l}' )] \cdot \vec{q} }
+ { |\vec{q} \times \vec{v}| \cdot |\vec{l} \times \vec{l}'| \cdot |\vec{q}|
+ }.
+\label{phicap2-def}
+\end{eqnarray}
+Here,  $\vec{l}$, $\vec{l'}$, $\vec{q}=\vec{l}-\vec{l'}$, and $\vec{v}$  are the three-momenta of the incoming  and outgoing lepton, the virtual photon, and the $\rho^0 $ meson respectively.
+%
+The azimuthal angle $\varphi $ between $\rho^0$-meson decay and production planes is defined by:
+
+\begin{eqnarray}
+\cos \varphi =
+\frac{ (\vec{q} \times \vec{v} )\cdot (\vec{v} \times \vec{k_1} ) }
+{ | (\vec{q} \times \vec{v} ) |
+%{ | (\vec{q} \times \vec{v} )\times \vec{v} |
+\cdot |\vec{v} \times \vec{k_1 |}} ,
+\label{phismall1-def}
+\end{eqnarray}
+\begin{eqnarray}
+ \sin \varphi =
+ \frac{[ (\vec{q} \times \vec{v} )\times \vec{v} ] \cdot ( \vec{k_1}  \times \vec{v} ) }
+{ | (\vec{q} \times \vec{v} )\times \vec{v} | \cdot |\vec{k_1} \times \vec{v} |
+ } ,
+\label{phismall2-def}
+\end{eqnarray}
+
+where $\vec{k_1}$ is the three-momentum of the positively charged decay pion $\pi^+$ in the hadronic CM system.\\
+The polar angle  $\theta$ of the decay $\pi^+$ in the vector-meson rest frame, with the $z$-axis aligned opposite to the outgoing nucleon three-momentum $\vec{p}^\prime$ and the $y$-axis directed along $\vec{p}^\prime \times \vec{q}$, is given by:
+
+\begin{eqnarray}
+\cos \theta  = -\frac{ \vec{p}^\prime \cdot \vec{P_{\pi^+}}}{| \vec{p}^\prime| \cdot |\vec{P_{\pi^+}}|},
+\label{theta-def}
+\end{eqnarray}
+
+where $\vec{P}_{\pi^+}$ is the three-momentum of the
+positively charged decay pion in the vector-meson rest frame.
+ 
+\end{document}
+

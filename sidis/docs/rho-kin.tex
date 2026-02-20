@@ -1,0 +1,123 @@
+\documentclass[12pt]{article}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+%-------------------------------------------------------------
+
+%\allowdisplaybreaks[2]
+
+% small space in math
+\newcommand{\ms}{\mskip 1.5mu}
+\newcommand{\bs}{\mskip -1.5mu}
+
+\newcommand{\half}{ {\textstyle\frac{1}{2}} }
+
+\newcommand{\im}{\operatorname{Im}}
+\newcommand{\re}{\operatorname{Re}}
+
+\newcommand{\gev}{\operatorname{GeV}}
+\newcommand{\mev}{\operatorname{MeV}}
+
+% three-vectors
+\newcommand{\tvec}[1]{\boldsymbol{#1}}
+
+\newcommand{\ru}[4]{u^{\ms #1 #2}_{#3 #4}}
+\newcommand{\rl}[4]{l^{\ms #1 #2}_{#3 #4}}
+\newcommand{\rs}[4]{s^{\ms #1 #2}_{#3 #4}}
+\newcommand{\rn}[4]{n^{\ms #1 #2}_{#3 #4}}
+
+% unnatural parity exchange
+\newcommand{\ruu}[4]{\tilde{u}^{\ms #1 #2}_{#3 #4}}
+\newcommand{\rnu}[4]{\tilde{n}^{\ms #1 #2}_{#3 #4}}
+
+% misalignment angle
+\newcommand{\cost}{\cos\theta_\gamma}
+\newcommand{\sint}{\sin\theta_\gamma}
+
+% for alignment in sub- and subscripts
+\newcommand{\0}{{\mskip 2.5mu} 0 {\mskip 2.5mu}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Vector meson production from a polarized nucleon}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+Let us consider the electroproduction process
+\begin{equation}
+  \label{production}
+e(l) + p(p) \to e(l') + p(p') + \rho(v) 
+\end{equation}
+followed by the decay
+\begin{equation}
+  \label{decay}
+\rho(v) \to \pi^+(k_1) + \pi^-(k_2) ,
+\end{equation}
+where four-momenta $l, l', p, p' v$ are given in parentheses.  
+
+
+Conventional variables for deep
+inelastic processes, $q=l-l'$, $Q^2= -q^2$, $x_B= Q^2 /(2 p\cdot q)$,
+$y=(p\cdot q) /(p\cdot l)$, $t=(p-p')^2=(q-v)^2$.  
+
+\begin{equation}
+  \label{eps-def}
+\epsilon
+  = \frac{1 - y - \frac{1}{4}\ms y^2 \gamma^2}{
+          1 - y + \frac{1}{2}\ms y^2 + \frac{1}{4}\ms y^2 \gamma^2}
+\end{equation}
+
+
+Angles  $\phi$, $\varphi$ and $\theta$  defined as following:
+
+The azimuthal angle $\phi$ between $\rho^0$-meson production plane and lepton scattering plane in the hadronic CM system is given by:
+\begin{eqnarray}
+\cos \phi = \frac{ (\vec{q} \times \vec{v}) \cdot (\vec{l} \times \vec{l}')}
+{ | \vec{q} \times \vec{v} | \cdot |\vec{l} \times \vec{l}'| } ,
+\label{phicap1-def}
+\end{eqnarray}
+
+\begin{eqnarray}
+\sin \phi =
+ \frac{ [ (\vec{q} \times \vec{v} )\times (\vec{l} \times \vec{l}' )] \cdot \vec{q} }
+ { |\vec{q} \times \vec{v}| \cdot |\vec{l} \times \vec{l}'| \cdot |\vec{q}|
+ }.
+\label{phicap2-def}
+\end{eqnarray}
+Here,  $\vec{l}$, $\vec{l'}$, $\vec{q}=\vec{l}-\vec{l'}$, and $\vec{v}$  are the three-momenta of the incoming  and outgoing lepton, the virtual photon, and the $\rho^0 $ meson respectively.
+%
+The azimuthal angle $\varphi $ between $\rho^0$-meson decay and production planes is defined by:
+
+\begin{eqnarray}
+\cos \varphi =
+\frac{ (\vec{q} \times \vec{v} )\cdot (\vec{v} \times \vec{k_1} ) }
+{ | (\vec{q} \times \vec{v} ) |
+%{ | (\vec{q} \times \vec{v} )\times \vec{v} |
+\cdot |\vec{v} \times \vec{k_1 |}} ,
+\label{phismall1-def}
+\end{eqnarray}
+\begin{eqnarray}
+ \sin \varphi =
+ \frac{[ (\vec{q} \times \vec{v} )\times \vec{v} ] \cdot ( \vec{k_1}  \times \vec{v} ) }
+{ | (\vec{q} \times \vec{v} )\times \vec{v} | \cdot |\vec{k_1} \times \vec{v} |
+ } ,
+\label{phismall2-def}
+\end{eqnarray}
+
+where $\vec{k_1}$ is the three-momentum of the positively charged decay pion $\pi^+$ in the hadronic CM system.\\
+The polar angle  $\theta$ of the decay $\pi^+$ in the vector-meson rest frame, with the $z$-axis aligned opposite to the outgoing nucleon three-momentum $\vec{p}^\prime$ and the $y$-axis directed along $\vec{p}^\prime \times \vec{q}$, is given by:
+
+\begin{eqnarray}
+\cos \theta  = -\frac{ \vec{p}^\prime \cdot \vec{P_{\pi^+}}}{| \vec{p}^\prime| \cdot |\vec{P_{\pi^+}}|},
+\label{theta-def}
+\end{eqnarray}
+
+where $\vec{P}_{\pi^+}$ is the three-momentum of the
+positively charged decay pion in the vector-meson rest frame.
+ 
+\end{document}
+
