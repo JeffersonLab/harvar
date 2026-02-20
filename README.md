@@ -1,6 +1,6 @@
 # HARVAR Event Generator
 
-At the present it supports rho-meson electroproduction event generator
+At the present it supports rho-meson electroproduction
 
 # Rho-Meson Electroproduction Event Generator
 
