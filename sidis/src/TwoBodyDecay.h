@@ -1,9 +1,7 @@
 #ifndef TWO_BODY_DECAY_H
 #define TWO_BODY_DECAY_H
 
-#include "TLorentzVector.h"
-#include "TVector3.h"
-#include "TRandom3.h"
+#include "ROOTCompat.h"
 #include <cmath>
 
 class TwoBodyDecay {

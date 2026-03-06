@@ -20,7 +20,7 @@ struct Candidate {
  };
  
  struct PhysicsInput {
-     Wkernels::Mat4 u, l, s;
+     Wkernels::Mat4 u, l, n, s;
      double dsigmaT_dt, dsigmaL_dt;   // [nb / GeV²]
      double Pl = 0.0, SL = 0.0, ST = 0.0;   // polarisations
  };

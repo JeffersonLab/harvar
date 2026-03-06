@@ -5,6 +5,6 @@ OBJECTS = main.o
 CXXFLAGS = -std=c++17
 
 all:
-	g++ -O2 -std=c++17 main.cpp -I. `root-config --cflags --glibs` -o generator.exe
+	g++ -O2 -std=c++17 main.cpp -I. -o generator.exe
 clean:
 	@rm -rf *.o generator.exe

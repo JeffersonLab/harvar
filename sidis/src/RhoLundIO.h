@@ -41,7 +41,7 @@ inline void printLundCLAS12(const RhoEvent&   ev,
     out << particles.size()             << ' '
         << 1                       << ' '
         << 1                        << ' '
-        << ev.pol             << ' '
+        << ev.beam_pol             << ' '
         << 0             << ' '
         << 11             << ' '
         << ev.beamE             << ' '
@@ -50,9 +50,9 @@ inline void printLundCLAS12(const RhoEvent&   ev,
         << 0.0             << ' '
         << ev.Q2                         << ' '
         << ev.xB                         << ' '
-        << ev.theta                         << ' '
+        << ev.thetaPi                    << ' '
         << ev.phi                        << ' '
-        << ev.thetaPi                         << ' '
+        << ev.thetaPi                    << ' '
         << ev.phiPi             << ' '   // ν = y·Ebeam
 
         << eventNo                      << '\n';

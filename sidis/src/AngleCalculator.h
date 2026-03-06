@@ -13,8 +13,7 @@
 #ifndef ANGLE_CALCULATOR_H
 #define ANGLE_CALCULATOR_H
 
-#include "TLorentzVector.h"
-#include "TVector3.h"
+#include "ROOTCompat.h"
 #include <cmath>
 #include <stdexcept>
 

@@ -2,9 +2,7 @@
 #ifndef RHO_EVENT_H
 #define RHO_EVENT_H
 
-#include "TLorentzVector.h"
-#include "TVector3.h"
-#include "TRandom3.h"
+#include "ROOTCompat.h"
 #include "TwoBodyDecay.h"
 #include "AngleCalculator.h"
 #include <cmath>
